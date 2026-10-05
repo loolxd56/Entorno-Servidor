@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% load static %} <!-- Esta línea le dice a django que usaremos los static -->
+<html>
+ <head>
+ <meta charset="UTF-8" />
+ <title>Home</title>
+ <!-- Esta línea le dice a django que busque dentro de los static
+ un archivo llamado style.css y que me devuelva el path -->
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ </head>
+[...]
