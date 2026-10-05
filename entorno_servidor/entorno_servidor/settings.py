@@ -54,7 +54,7 @@ ROOT_URLCONF = 'entorno_servidor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIRS,'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,5 +127,5 @@ MAILERS = {
 }
 
 STATICFILES_DIRS = [
- os.path.join(BASE_DIR, 'static')
+ BASE_DIR / 'static'
 ]
