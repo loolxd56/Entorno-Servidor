@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 {% load static %}
 <head>
@@ -15,10 +14,19 @@
         Ir a Structura App
     </a>
 
+    <!-- CORRECCIÓN AQUÍ: Añadimos el namespace 'calendario:' y un valor de ejemplo para la fecha, como 'hoy' o '2026-11-03' -->
+    <a href="{% url 'calendario:calendario' 'hoy' %}" class="btn btn-primary">
+        Ir a calendario App
+    </a>
+
+    <a href="{% url 'tres_en_raya' %}" class="btn btn-primary">
+        Ir a tres en raya
+    </a>
+
     <p>aqui vamos a poner un texto que lo vamos a modificar desde el html home y no desde la plantilla</p>
     
-    {% block  Contenido_Principal%}
+    {% block Contenido_Principal %}
     <p>hoalaaaaaaaaaaaa<p>
-    {% endblock Contenido_Principal%}
+    {% endblock Contenido_Principal %}
 </body>
 </html>
