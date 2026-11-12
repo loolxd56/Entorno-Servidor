@@ -28,5 +28,12 @@
     {% block Contenido_Principal %}
     <p>hoalaaaaaaaaaaaa<p>
     {% endblock Contenido_Principal %}
+    
+    <footer>
+    <!-- Tu contenido del footer -->
+    <div class="contador-visitas">
+        Páginas visitadas durante esta sesión: {{ request.session.visitas|default:"0" }}
+    </div>
+    </footer>
 </body>
 </html>

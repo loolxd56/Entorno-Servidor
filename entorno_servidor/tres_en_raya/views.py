@@ -1,21 +1,20 @@
 from django.shortcuts import render
 
 def verificar_ganador(tablero):
-    # Todas las combinaciones
+    # All combinations
     lineas_ganadoras = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Horizontales
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Verticales
         [0, 4, 8], [2, 4, 6]              # Diagonales
     ]
     
-    # Comprobamos si hay simbolos iguales
+    # We check for identical symbols.
     for a, b, c in lineas_ganadoras:
         if tablero[a] != '-' and tablero[a] == tablero[b] == tablero[c]:
             return tablero[a] 
-            #comprobamos si hay empate
+            #we check if there is a tie
     if '-' not in tablero:
         return 'Empate'
-    #la partida continua
     return None
 
 
@@ -40,16 +39,16 @@ def tres_en_raya(request):
                 else:
                     mensaje = '¡Ha ganado ' + resultado + '!'
             else:
-                # Si nadie ha ganado todavía, pasamos el turno
+                # If no one has won yet, we pass the turn.
                 turno = 'O' if turno == 'X' else 'X'
                 mensaje = 'Turno de ' + turno
 
         else:
-            # Si pulsó una casilla ocupada, mantenemos el mensaje del turno actual
+            # If an occupied square was selected, we keep the current turn's message.
             mensaje = 'Turno ' + turno
 
     else:
-        # Estado inicial
+        # Initial state
         tablero = ['-','-','-','-','-','-','-','-','-']
         turno = 'X'
         mensaje = 'Turno de X'
