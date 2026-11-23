@@ -27,5 +27,9 @@ urlpatterns = [
     path('calendario/', include('calendario.urls')),
    
     path('tres_en_raya/', include('tres_en_raya.urls')),
+
+    path('registro/', views.registro, name='registro'),
+
+    path('login/', views.logearse, name='login'),
 ]
 
