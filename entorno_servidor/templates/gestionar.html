@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Usuarios</title>
+</head>
+<body>
+    <h1>Gestión de usuarios</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="usuario">Selecciona un usuario:</label>
+        <select name="usuario_id" id="usuario">
+            {% for usuario in usuarios %}
+                <option value="{{ usuario.id }}">{{ usuario.username }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Eliminar usuario</button>
+    </form>
+</body>
+</html>

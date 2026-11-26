@@ -31,5 +31,8 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
 
     path('login/', views.logearse, name='login'),
+
+    path('gestionar/', views.gestionar_usuarios, name='gestionar_usuarios'),
+
 ]
 
